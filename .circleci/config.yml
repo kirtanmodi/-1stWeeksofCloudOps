@@ -7,12 +7,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Lets deploy thsi application
+          name: Lets deploy this application
           command: |
             ls
             aws s3 sync . s3://$AWS_S3_BUCKET/
-
-
 
 workflows:
   Production:
@@ -21,4 +19,3 @@ workflows:
           filters:
             branches:
               only: main
-  
